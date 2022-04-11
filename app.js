@@ -7,6 +7,8 @@ const port = 3000;
 // import mongoose module
 const mongoose = require('mongoose');
 
+const todoRouter = require('./routes/todo');
+
 // setup mongoose connection
 const mongoDB = '127.0.0.1'
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true});
@@ -18,6 +20,8 @@ db.on('error', console.error.bind(console, 'MongoDB connection error'))
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+
+app.use('/', todoRouter);
 
 app.get('/', (req,res) => {
     res.json({'message': 'Hello world!'});
