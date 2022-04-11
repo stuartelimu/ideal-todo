@@ -4,7 +4,9 @@
   "description": "A simple TODO API using Nodejs + Express",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "devstart": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -21,5 +23,8 @@
     "body-parser": "^1.20.0",
     "express": "^4.17.3",
     "mongoose": "^6.2.10"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }
