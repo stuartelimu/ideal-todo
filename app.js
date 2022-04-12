@@ -21,7 +21,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error'))
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-app.use('/', todoRouter);
+app.use('/api', todoRouter);
 
 
 app.get('/', (req,res) => {
