@@ -1,0 +1,32 @@
+### Get Todos
+GET http://localhost:3000/api/todos
+Accept: application/json
+
+### Add TODO
+POST http://localhost:3000/api/todo/create
+Accept: application/json
+Content-Type: application/json
+
+{
+    "item":"Hello world",
+    "completed":false 
+}
+
+### Delete TODO success
+DELETE  http://localhost:3000/api/todo/625590b3d5320c43b07a0f75
+Accept: application/json
+Content-Type: application/json
+
+{
+    "message": "Todo deleted successfully"
+}
+
+### Update TODO success
+PUT  http://localhost:3000/api/todo/625590b3d5320c43b07a0f75
+Accept: application/json
+Content-Type: application/json
+
+{
+    "item": "Go cruise",
+    "completed": false
+}
