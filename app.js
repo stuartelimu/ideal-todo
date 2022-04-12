@@ -10,7 +10,7 @@ const mongoose = require('mongoose');
 const todoRouter = require('./routes/todo');
 
 // setup mongoose connection
-const mongoDB = '127.0.0.1'
+const mongoDB = 'mongodb://localhost:27017/ideal_todo'
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true});
 
 // get default connection
@@ -23,9 +23,11 @@ app.use(bodyParser.json());
 
 app.use('/', todoRouter);
 
+
 app.get('/', (req,res) => {
     res.json({'message': 'Hello world!'});
 });
+
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
